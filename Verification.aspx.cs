@@ -17,7 +17,7 @@ public partial class Verification : System.Web.UI.Page
             tbl_UsersTableAdapter iuser = new tbl_UsersTableAdapter();
             EAuthDataSet.tbl_UsersDataTable itbl = new EAuthDataSet.tbl_UsersDataTable();
             itbl = iuser.GetByUserName(Session["username"].ToString());
-            if (itbl.Rows.Count > 0)
+            if (itbl.Rows.Count>0)
             {
                 foreach(EAuthDataSet.tbl_UsersRow irow in itbl.Rows)
                 {
@@ -25,7 +25,6 @@ public partial class Verification : System.Web.UI.Page
                     otp = irow.otp;
                 }
                 imgQRCODE.ImageUrl = qrimgurl;
-              
             }
         }
     }
@@ -34,8 +33,6 @@ public partial class Verification : System.Web.UI.Page
     {
         string myotp = txtOTP.Text.Trim();
 
-
-
         tbl_UsersTableAdapter iuser = new tbl_UsersTableAdapter();
         EAuthDataSet.tbl_UsersDataTable itbl = new EAuthDataSet.tbl_UsersDataTable();
         itbl = iuser.GetByUserName(Session["username"].ToString());
@@ -43,21 +40,16 @@ public partial class Verification : System.Web.UI.Page
         {
             foreach (EAuthDataSet.tbl_UsersRow irow in itbl.Rows)
             {
-               
                 otp = irow.otp;
             }
-           
-
         }
-
-
-        if (myotp == otp)
+        if (myotp==otp)
         {
-            Response.Redirect("~/DefaultSuccess.aspx");
+            Response.Redirect("~/Success.aspx");
         }
         else
         {
-            lblmsg.Text = "User identity cannot be verified!";
+            lblmsg.Text = "User identity cannot be verified! ";
             lblmsg.Visible = true;
         }
     }

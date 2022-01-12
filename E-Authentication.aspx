@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="E-Authentication.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html>
 
@@ -15,10 +15,12 @@
 <body>
     <form id="form1" runat="server">
         <div>
-        <h2>User Registration</h2>
+        <h2>Welcome to the E-Authentication project</h2>
         <hr />
+        <h3>Login Page</h3>
             <asp:Label ID="lblmsg" Visible="false" runat="server" Font-Bold="true"></asp:Label>
-            <table style="width:450px">
+            <br />
+            <table style= "width:450px">
                 <tr>
                     <td>Username</td>
                     <td>
@@ -28,30 +30,17 @@
                 <tr>
                     <td>Password</td>
                     <td>
-                        <asp:TextBox ID="txtpassword" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td>
-                        <asp:TextBox ID="txtemail" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Phone No</td>
-                    <td>
-                        <asp:TextBox ID="txtphoneNo" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtpassword" TextMode="Password" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
-                        <asp:Button ID="btnregister" OnClick="btnregister_Click1" runat="server" Text="Register" />
+                        <asp:Button ID="btnlogin" OnClick="btnlogin_Click" runat="server" Text="Login" />
                     </td>
                 </tr>
             </table>
-        <h4>Already a user? <asp:HyperLink runat="server" NavigateUrl="~/E-Authentication.aspx" Text="Login"></asp:HyperLink></h4>
-        
+            <h4>New to this page? <asp:HyperLink runat="server" NavigateUrl="~/Register.aspx" Text="Register now"></asp:HyperLink></h4>
         </div>
     </form>
 </body>
