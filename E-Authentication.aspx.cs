@@ -116,7 +116,7 @@ public partial class _Default : System.Web.UI.Page
         try
         {
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("isaajcomp@gmail.com", "E-Authentication");
+            mail.From = new MailAddress("<Enter the sender mail here>", "E-Authentication");
             mail.To.Add(useremail);
             mail.Subject = "Account Activation";
             string body = "Hello " + txtusername.Text.Trim();
@@ -126,7 +126,7 @@ public partial class _Default : System.Web.UI.Page
             mail.AlternateViews.Add(view);
             mail.IsBodyHtml = true;
             SmtpClient smpt = new SmtpClient("smtp.gmail.com", 587);
-            NetworkCredential credentials = new NetworkCredential("isaajcomp@gmail.com", "e-authentication");
+            NetworkCredential credentials = new NetworkCredential("<Enter the sender mail here>", "<Enter the sender mail's password>");
             smpt.Credentials = credentials;
             smpt.Send(mail);
         }
